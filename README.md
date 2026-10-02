@@ -32,6 +32,10 @@
 - [Coin](game/coin.h)：金幣移動、浮動、收集與重設。
 - [Scoreboard](game/scoreboard.h)：分數管理與顯示。
 
+## Demo
+
+![Demo](/images/screenshot.png)
+
 ## 開發環境
 
 使用 C++17、SDL2、SDL2_image 與 SDL2_ttf。建置前需依本機環境設定標頭檔、函式庫路徑及連結選項；執行時需將 `game/asset` 與 `game/font` 複製為執行檔同一目錄下的 `asset` 與 `font` 資料夾。
