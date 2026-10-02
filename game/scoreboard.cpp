@@ -1,11 +1,11 @@
-#include "Scoreboard.h"
+#include "scoreboard.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <string>
 #include <iostream>
 
 Scoreboard::Scoreboard(int startX, int startY, SDL_Color c, TTF_Font* font)
-    : x(startX), y(startY), color(c), font(font), score(0) {
+    : score(0), x(startX), y(startY), color(c), font(font) {
 }
 
 void Scoreboard::addScore(int points) {
