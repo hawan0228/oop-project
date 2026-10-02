@@ -1,28 +1,26 @@
-﻿#include <SDL.h>
-#include<string.h>
 #ifndef PLAYER_H
 #define PLAYER_H
 
-// Player ���O�w�q
+#include <SDL.h>
+
 class Player {
 private:
-    int x, y;           // �D������m
-    int width, height;  // �D�����ؤo
-    int speed;          // �D�������ʳt��
+    float x, y;
+    int width, height, speed;
+    float verticalVelocity = 0.0f;
+    float animationTime = 0.0f;
+    bool jumpHeld = false;
     SDL_Texture* texture;
-    SDL_Color color; 
+    SDL_Color color;
 
 public:
-    // �غc�禡
     Player(int startX, int startY, int w, int h, int moveSpeed, SDL_Color c);
-    // �B�z�����޿�
-    void move(const Uint8* keyState, int screenWidth, int screenHeight);
-
+    ~Player();
+    void move(const Uint8* keyState, int screenWidth, int groundY, float deltaTime);
+    void reset(int startX, int startY);
     void render(SDL_Renderer* renderer) const;
-
     bool checkCollision(const SDL_Rect& other) const;
-
     bool loadTexture(SDL_Renderer* renderer, const char* filePath);
 };
 
-#endif 
+#endif
